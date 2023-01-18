@@ -1,0 +1,33 @@
+-load index compress static
+
+html(lang="de" )
+  head
+    title Arbeitsplan
+    meta(charset="UTF-8")
+    -compress css
+      link(type="text/x-sass" rel="stylesheet" href="{% static 'sass/styles.sass' %}")
+    style.
+      .row {grid-template-columns: 50px repeat({{ units | length }}, 1fr);}
+      .row.data .cell:nth-child({{unit_count}}n+1) {
+        border-right: 1px solid rgba(0, 0, 0, 0.4)
+      }
+
+  body
+
+    .row
+      .cell
+      for date in dates
+        .cell.header1(style="grid-column: span {{unit_count}}") {{ date }}
+    .row
+      .cell.header2
+      for unit in units
+        .cell.header2
+          .vertical {{ unit }}
+    for index, row in plan.iterrows
+      .row.data(class="{% cycle 'even' 'odd' %}")
+        .cell {{ index }}
+        for cell in row
+          if cell
+            .cell(style="box-shadow: inset 0 0 0 1000px {{ cell }}")
+          else
+            .cell

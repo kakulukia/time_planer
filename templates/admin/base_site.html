@@ -1,0 +1,9 @@
+{% extends "admin/base_site.html" %}
+
+{% load static compress  %}
+
+{% block extrahead %}
+  {% compress css %}
+    <link rel="stylesheet" type="text/x-sass" href="{% static 'sass/admin.sass' %}">
+  {% endcompress %}
+{% endblock %}
