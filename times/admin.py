@@ -9,6 +9,7 @@ class PlanAdmin(admin.ModelAdmin):
     list_display = ['date', 'unit', 'start', 'end']
     actions = None
     date_hierarchy = 'date'
+    list_filter = ['unit']
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
