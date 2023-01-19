@@ -16,6 +16,7 @@ pypugjs = "^5.9.12"
 django-compressor = "^4.3"
 pendulum = "^2.1.2"
 django-jazzmin = "^2.6.0"
+ipdb = "^0.13.11"
 
 
 [build-system]

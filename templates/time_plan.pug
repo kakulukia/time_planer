@@ -4,8 +4,10 @@ html(lang="de" )
   head
     title Arbeitsplan
     meta(charset="UTF-8")
-    -compress css
-      link(type="text/x-sass" rel="stylesheet" href="{% static 'sass/styles.sass' %}")
+    link(type="text/css" rel="stylesheet" href="{% static 'sass/styles.css' %}")
+    //{# -compress css //link(type="text/x-sass" rel="stylesheet" href="{% static 'sass/styles.sass' %}") #}
+
+
     style.
       .row {grid-template-columns: 50px repeat({{ units | length }}, 1fr);}
       .row.data .cell:nth-child({{unit_count}}n+1) {
@@ -13,13 +15,16 @@ html(lang="de" )
       }
 
   body
-
     .row
       .cell
       for date in dates
         .cell.header1(style="grid-column: span {{unit_count}}") {{ date }}
     .row
-      .cell.header2
+      .cell
+        a(href="/?date={{ previous_week }}") <<<
+        br
+        br
+        a(href="/?date={{ next_week }}") >>>
       for unit in units
         .cell.header2
           .vertical {{ unit }}

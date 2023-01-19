@@ -24,7 +24,7 @@ class UnitAdmin(admin.ModelAdmin):
 
     class Media:
         css = {
-            'all': ('sass/admin.sass',)
+            'all': ('sass/admin.css',)
         }
 
     def show_color(self, unit: Unit):
