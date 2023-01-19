@@ -17,12 +17,13 @@ html(lang="de" )
   body
     .row
       .cell
+        a(href="/admin/times/plan/") Liste
       for date in dates
         .cell.header1(style="grid-column: span {{unit_count}}") {{ date }}
     .row
       .cell
-        a(href="/?date={{ previous_week }}") <<<
         br
+        a(href="/?date={{ previous_week }}") <<<
         br
         a(href="/?date={{ next_week }}") >>>
       for unit in units

@@ -159,3 +159,10 @@ TIME_INPUT_FORMATS = [
     '%H:%M',        # '14:30'
     '%H%M',         # '1430'
 ]
+
+JAZZMIN_SETTINGS = {
+    "topmenu_links": [
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Arbeitsplan",  "url": "/", "permissions": []},
+    ],
+}
